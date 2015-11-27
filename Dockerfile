@@ -8,7 +8,6 @@ MAINTAINER Dreampie
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head \
-  &&  /usr/share/elasticsearch/bin/plugin install lukas-vlcek/bigdesk \
   &&  /usr/share/elasticsearch/bin/plugin install elasticsearch/marvel/latest
 
-COPY ./logstash_netflow.json /tmp/
+COPY ./elasticsearch.yml /opt/elasticsearch/config/
