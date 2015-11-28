@@ -8,6 +8,8 @@ MAINTAINER Dreampie
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head \
-  &&  /usr/share/elasticsearch/bin/plugin install elasticsearch/marvel/latest
+    && /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf \
+    && /usr/share/elasticsearch/bin/plugin install license \
+    && /usr/share/elasticsearch/bin/plugin install marvel-agent
 
 COPY ./elasticsearch.yml /opt/elasticsearch/config/
